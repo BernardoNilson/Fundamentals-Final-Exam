@@ -2,7 +2,7 @@ package source;
 
 /**
  * Undertanding the problem: README.md
- * 
+ *  
  * @author: Bernardo Nilson
  * @version: 14/06/2023
  */
@@ -10,11 +10,11 @@ package source;
 public class Patient {
 
     // Pacient attributes
-    private String name, id, number, diagnosis;
-    private int medicine, medicineBox;
+    private String name, id, number;
+    private int diagnosis, medicine, medicineBox;
 
     // Constructor method, used to create the new project
-    public Patient(String name, String id, String number, String diagnosis, int medicine, int medicineBox) {
+    public Patient(String name, String id, String number, int diagnosis, int medicine, int medicineBox) {
 
         this.name = name;
         this.id = id;
@@ -38,7 +38,7 @@ public class Patient {
         return number;
     }
 
-    public String getDiagnosis() {
+    public int getDiagnosis() {
         return diagnosis;
     }
 
@@ -63,7 +63,7 @@ public class Patient {
         this.number = number;
     }
 
-    public void setDiagnosis(String diagnosis) {
+    public void setDiagnosis(int diagnosis) {
         this.diagnosis = diagnosis;
     }
 
@@ -77,8 +77,8 @@ public class Patient {
 
     // Method to show all medicine information, summary
     public String toString() {
-        return "Pacient summary:\n- Name: " + name + "\n- ID: " + id + "\nPhone Number: " + number
-                + "\nDiagnosis: " + diagnosis + "\nMedicine (Number): " + medicine
-                + "\nQuantity of medicine boxes: " + medicineBox;
+        return "Pacient summary:\n- Name: " + name + "\n- ID: " + id + "\n- Phone Number: " + number
+                + "\n- Diagnosis: " + diagnosis + "\n- Medicine: " + medicine
+                + "\n- Quantity of medicine boxes: " + medicineBox;
     }
 }
