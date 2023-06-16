@@ -4,7 +4,7 @@ package source;
  * Undertanding the problem: README.md
  * 
  * @author: Bernardo Nilson
- * @version: 14/06/2023
+ * @version: 15.06.2023
  */
 
 
@@ -41,8 +41,16 @@ public class Medicine {
         this.medicineBox = medicineBox;
     }
 
+    public void addStorage(int medicineBox) {
+        this.medicineBox += medicineBox;
+    }
+
+    public void subtractStorage(int medicineBox) {
+        this.medicineBox -= medicineBox;
+    }
+
     // Method to show all medicine information, summary
     public String toString() {
-        return "Medicine summary:\n- Name: " + name + "\nQuantity of medicine boxes: " + medicineBox;
+        return "- Name: " + name + "\n- Quantity avaliable: " + medicineBox;
     }
 }

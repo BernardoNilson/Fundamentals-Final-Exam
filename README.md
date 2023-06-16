@@ -18,7 +18,7 @@ das informações do paciente.
 Use como critério para cadastrar o diagnostico a seguinte relação:
 
     1. Covid
-    2. Zica
+    2. Zika
     3. Chikungunya
     4. Dengue
 
