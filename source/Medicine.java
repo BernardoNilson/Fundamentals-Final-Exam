@@ -41,10 +41,12 @@ public class Medicine {
         this.medicineBox = medicineBox;
     }
 
+    // Increase the storage attribute with that variable
     public void addStorage(int medicineBox) {
         this.medicineBox += medicineBox;
     }
 
+    // Decrease the storage attribute with that variable
     public void subtractStorage(int medicineBox) {
         this.medicineBox -= medicineBox;
     }

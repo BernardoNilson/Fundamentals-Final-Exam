@@ -1,10 +1,8 @@
 package source;
 
 /**
- * Undertanding the problem: README.md
- * 
  * @author: Bernardo Nilson
- * @version: 15.06.2023
+ * @version: 18.06.2023
  */
 
 import java.util.*;
@@ -21,15 +19,18 @@ public class AppWealthSystem {
         Medicine medicineZika = new Medicine("Zicox", 150);
         Medicine medicineChikungunya = new Medicine("ChikTop", 50);
         Medicine medicineDengue = new Medicine("Denguenit", 200);
-    
-        Medicine [] inventory = {medicineCovid, medicineZika, medicineChikungunya, medicineDengue};
 
+        // It was created to help the program organize the medicine summary
+        Medicine[] inventory = { medicineCovid, medicineZika, medicineChikungunya, medicineDengue };
 
+        // Creates the registration objetion, the main object of this application
         PatientRegistration registration = new PatientRegistration(10);
-        
+
+        // Variables to keep the program in loop
         boolean exit = false;
 
-        System.out.println("\033\143");
+        // Introduction to the program
+        System.out.println("\033\143"); // Cleans the terminal
         System.out.println("You're welcome to Wealth System!\n");
 
         do {
@@ -47,8 +48,9 @@ public class AppWealthSystem {
             // Menu selection
             System.out.print("Your response: ");
             int menu = scan.nextInt();
-            scan.nextLine();
+            scan.nextLine(); // Receive the 'enter' that continues in the Scanner
 
+            // MENU
             switch (menu) {
 
                 case 1:
@@ -70,14 +72,16 @@ public class AppWealthSystem {
                     System.out.println(" ( 4 ) - DENGUE");
                     System.out.print("Your response: ");
                     int diagnosis = scan.nextInt();
+                    // Converts the diagnosis in the necessary medicine for that disease
                     Medicine medicine = convertMedicine(diagnosis, medicineCovid, medicineZika, medicineChikungunya,
                             medicineDengue);
 
                     System.out.print("\nHow much medicine is required (ex. 0)? ");
                     int medicineBox = scan.nextInt();
 
+                    // Creates the new patient
                     Patient newPatient = new Patient(name, id, number, diagnosis, medicine, medicineBox);
-
+                    // Storage the patient in the registration
                     registration.addPatient(newPatient);
 
                     break;
@@ -86,21 +90,27 @@ public class AppWealthSystem {
                     System.out.println("You select 'REMOVE PACIENT'!");
 
                     System.out.println("\nWhich position do you want to remove? ");
+                    // Show all occupied positions to the user choose
                     registration.occupiedPositions();
 
                     System.out.print("Your response: ");
                     int position = scan.nextInt();
 
+                    // Remove the patient of that position
                     registration.removePatient(position);
                     break;
                 case 3:
                     System.out.println("You select 'MANAGE REGISTRATION'!\n");
 
+                    // That registration method is used to show all the informations, without
+                    // exceptions
                     registration.summaryRegistration();
+
                     break;
                 case 4:
                     System.out.println("You select 'MANAGE MEDICINE'!\n");
-                    
+
+                    // Loop to show all medicine storage informations
                     System.out.println("As requested, MEDICINE SUMMARY:");
                     for (int i = 0; i < inventory.length; i++) {
                         System.out.println(inventory[i].toString());
@@ -109,13 +119,15 @@ public class AppWealthSystem {
                     break;
                 case 5:
                     System.out.println("\nYou select 'SEE PACIENTS'!\n");
+
                     registration.showPatientsName();
                     registration.showDiseasePercentage();
+
                     break;
                 case 6:
                     System.out.println("You select 'EXIT PROGRAM'!\nSee you next time :)");
                     exit = true;
-                    System.exit(0);
+
                     break;
                 default:
                     System.out.println("Something wrong happens! Try again...");
@@ -127,8 +139,7 @@ public class AppWealthSystem {
         scan.close();
     }
 
-    // Converts diagnosis number into medicine String to enter the patient
-    // information
+    // Converts diagnosis number into medicine object
     public static Medicine convertMedicine(int medicine, Medicine covid, Medicine zika, Medicine chikungunya,
             Medicine dengue) {
         switch (medicine) {
