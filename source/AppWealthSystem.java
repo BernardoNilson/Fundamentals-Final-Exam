@@ -82,7 +82,12 @@ public class AppWealthSystem {
                     // Creates the new patient
                     Patient newPatient = new Patient(name, id, number, diagnosis, medicine, medicineBox);
                     // Storage the patient in the registration
-                    registration.addPatient(newPatient);
+                    if (medicineBox < medicine.getMedicineBox()) {
+                        registration.addPatient(newPatient);
+                    } else {
+                        System.out.println(newPatient.getName() + " wasn't added! There was no medicine left");
+                    }
+                    
 
                     break;
 
