@@ -12,6 +12,7 @@ Obs. O código-fonte e os comentários estão escritos em *inglês*.
 Foi implementado um **menu interativo** no terminal que permite aos usuários acessar diferentes funcionalidades do sistema de forma conveniente. Ao iniciar o programa, o menu é exibido, apresentando uma lista de opções numeradas. Cada opção corresponde a uma funcionalidade específica do sistema. Os usuários podem selecionar uma opção digitando o número correspondente no terminal e pressionando a tecla Enter.
 
 -- *Exemplo*:
+
      --------- MENU ---------       
      ( 1 ) - ADD PACIENT
      ( 2 ) - REMOVE PACIENT
